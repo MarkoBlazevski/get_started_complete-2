@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+	      font-family: 'Roboto', Arial, sans-serif;
+        min-height: 200px;
+        min-width: 400px;
+        outline: none;
+      }
+	  .ratingTable {
+    border-color: #eee;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+}
+.parameterTitleCell {
+    background-color: #f9f9f9;
+    line-height: 33px;
+    padding: 0 15px 10px 5px;
+    width: 120px;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+	font-size:14px;
+	font-weight:500;
+	line-height:0.9;
+	text-align: center;
+}
+.parameterTitleCell  a{
+    text-decoration: none;
+	font-weight:500;
+}
+.parameterTitleCell  img{
+    margin-top: 10px;
+}
+.parameterTitleCell  span{
+     position: relative;
+    bottom: 4px;
+	    color: #F26419;
+	}
+.average-rate{
+color: white;
+    background-color: #F26419;
+    padding: 4px;
+    border-radius: 8px;
+}
+.center{
+text-align:center;
+font-size:20px;
+
+}
+.rateCell{
+font-weight:bold;
+padding:5px;
+}
+#year{
+font-size:0.7em;
+}
+    </style>
+	 
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="lc_switch.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="lc_switch.css">
+  </head>
+  <body>
+  <h4 id="movieTitle" class="center"> <span id="year"></span></h4>
+    <h4 class="center">Average Rate:
+	<span class="average-rate"></span></h4>
+	 <table border="1" cellpadding="3" style="border-collapse:collapse;" class="ratingTable">
+	 <tr>
+	 <th nowrap>Source </th>
+	 <td class="parameterTitleCell"><a class="RTurl" href=""  target="_blank"><img src="images/rt.png" height="20"><span>TOMATOMETER</span></a></td>
+	 <td class="parameterTitleCell"><a class="RTurl" href=""  target="_blank"><img src="images/rt.png" height="20"><span>AUDIENCE SCORE</span></a></td>
+	 <td class="parameterTitleCell"><a class="IMDBurl" href=""  target="_blank"><img src="images/imdb.png" height="20"></a> </td>
+     <td class="parameterTitleCell"><a class="MCurl" href=""  target="_blank"><img src="images/mc.png" height="20"></a> </td>
+     <td class="parameterTitleCell"><a class="FDurl" href=""  target="_blank"><img src="images/fd.png" height="20"></a> </td>
+
+	 </tr>
+      <tr>
+	  <th nowrap>Rating </th>
+	  <td class="rateCell" align="center"><span id="rttom">N/A</span></td>
+	  <td class="rateCell" align="center"><span id="rtaud">N/A</span></td>
+      <td class="rateCell" align="center"><span id="imdb">N/A</span></td>
+      <td class="rateCell" align="center"><span id="mt">N/A</span></td>
+      <td class="rateCell" align="center"><span id="fd">N/A</span></td> 
+      </tr>
+	   <tr>
+	  <th nowrap>votes </th>
+	  <td class="rateCell" align="center"><span id="rttomvotes">N/A</span></td>
+	  <td class="rateCell" align="center"><span id="rtaudvotes">N/A</span></td>
+      <td class="rateCell" align="center"><span id="imdbvotes">N/A</span></td>
+      <td class="rateCell" align="center"><span id="mtvotes">N/A</span></td>
+      <td class="rateCell" align="center"><span id="fdvotes">N/A</span></td> 
+      </tr>
+	  
+	   <tr>
+	  <th nowrap>status </th>
+	  <td class="tomStat" align="center"><span id="rtstate">
+	  <p><div class="lcs_wrap"><input type="checkbox" name="check-3" value="6" class="lcs_check lcs_tt1" checked="checked" autocomplete="off">
+<div class="lcs_switch  lcs_checkbox_switch lcs_on"><div class="lcs_cursor"></div><div class="lcs_label lcs_label_on">ON</div>
+<div class="lcs_label lcs_label_off">OFF</div></div></div></p>   
+
+	  </span></td>
+	  <td class="rateCell" align="center"><span id="rtaudstate">
+	  <p><div class="lcs_wrap"><input type="checkbox" name="check-3" value="6" class="lcs_check lcs_tt1" checked="checked" autocomplete="off">
+<div class="lcs_switch  lcs_checkbox_switch lcs_on"><div class="lcs_cursor"></div><div class="lcs_label lcs_label_on">ON</div>
+<div class="lcs_label lcs_label_off">OFF</div></div></div></p>   
+
+	  </span></td>
+      <td class="rateCell" align="center"><span id="imdbstate">
+	  <p><div class="lcs_wrap"><input type="checkbox" name="check-3" value="6" class="lcs_check lcs_tt1" checked="checked" autocomplete="off">
+<div class="lcs_switch  lcs_checkbox_switch lcs_on"><div class="lcs_cursor"></div><div class="lcs_label lcs_label_on">ON</div>
+<div class="lcs_label lcs_label_off">OFF</div></div></div></p>   
+
+	  </span></td>
+      <td class="rateCell" align="center"><span id="mtstate">
+	  <p><div class="lcs_wrap"><input type="checkbox" name="check-3" value="6" class="lcs_check lcs_tt1" checked="checked" autocomplete="off">
+<div class="lcs_switch  lcs_checkbox_switch lcs_on"><div class="lcs_cursor"></div><div class="lcs_label lcs_label_on">ON</div>
+<div class="lcs_label lcs_label_off">OFF</div></div></div></p>   
+
+	  </span></td>
+      <td class="rateCell" align="center"><span id="fdstate">
+	  <p><div class="lcs_wrap"><input type="checkbox" name="check-3" value="6" class="lcs_check lcs_tt1" checked="checked" autocomplete="off">
+<div class="lcs_switch  lcs_checkbox_switch lcs_on"><div class="lcs_cursor"></div><div class="lcs_label lcs_label_on">ON</div>
+<div class="lcs_label lcs_label_off">OFF</div></div></div></p>   
+
+	  
+	  </span></td> 
+      </tr>
+
+ </table>
+	
+	
+	<ol id="new-projects"></ol>
+	 <script src="switch.js"></script>
+   <script src="popup.js"></script>
+  </body>
+ 
+</html>
